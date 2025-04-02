@@ -1,7 +1,7 @@
 
 /******************************************************************
  *
- *   YOUR NAME / SECTION NUMBER
+ *  Alexa Solorzano COMP 272 001
  *
  *   This java file contains the problem solutions for the methods lastBoulder,
  *   showDuplicates, and pair methods. You should utilize the Java Collection
@@ -87,6 +87,13 @@ public class ProblemSolutions {
      * @param  input an ArrayList<String>
      * @return       an ArrayList<String> containing only unique strings that appear
      *               more than once in the input list. They will be in ascending order.
+     *
+     * In class, we have been talking about how sorting helps in faster searching and retrieval. 
+     * There are also some sortinng trade-offs. In this specific situation, we are focused on collecting duplicate values and then sorting in ascending order. 
+     * Referencing to the slides, we can see that we can easily sort lists in java by using the sort methods of the collection classes in java.util. This sorting method is a version of quick-sort.
+     *
+     * Psuedocode: 
+     * Initialize a
      */
 
     public static ArrayList<String> showDuplicates(ArrayList<String> input) {
