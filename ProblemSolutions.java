@@ -89,19 +89,43 @@ public class ProblemSolutions {
      *               more than once in the input list. They will be in ascending order.
      *
      * In class, we have been talking about how sorting helps in faster searching and retrieval. 
-     * There are also some sortinng trade-offs. In this specific situation, we are focused on collecting duplicate values and then sorting in ascending order. 
-     * Referencing to the slides, we can see that we can easily sort lists in java by using the sort methods of the collection classes in java.util. This sorting method is a version of quick-sort.
-     *
+     * There are also some sortinng trade-offs. In this specific situation, we are focused on 1) collecting duplicate values and 2) then sorting in ascending order. 
+     * 1) We have talked about how ArrayLists are inefficient for searching. Sets actually provide a efficient implementation for basic operations. Specifically, HashHets is a data structure that would be great in keeping tack of the strings that have already been encountered in the input list.
+     * 2) Referencing to the slides, we can see that we can easily sort lists in java by using the sort methods of the collection classes in java.util. This sorting method is a version of quick-sort.
+     * 
      * Psuedocode: 
-     * Initialize a
+     * Initialize a HashSet to track strings that have already been seen
+     * Initialize a new ArrayList to store duplicates
+     *
+     * Iterate over the input list to find duplicates 
+     *    If the string is alrady in seen (so its a duplicate) and not in duplicates, add it to the duplicate ArrayList
+     *    Otherwise, the string has not been seen, add it to the seen set
+     *
+     * Sort the duplicates ArrayList using Collection's built-in sort
+     * Return the duplicates ArrayList
      */
 
     public static ArrayList<String> showDuplicates(ArrayList<String> input) {
+        HashSet<String> seen = new HashSet<>();
+        ArrayList<String> duplicates = new ArrayList<>();
+        //Iterate over the input list
+        for(int i = 0; i < input.size(); i++){
+            String str = input.get(i); //Access each string in the input list
 
-        //
-        //  YOUR CODE GOES HERE
-        //
-        return new ArrayList<>();  // Make sure result is sorted in ascending order
+            //If the sttring has already been seen and is not in duplicates, add it to duplicates
+            if(seen.contains(str)){
+                if(!duplicates.contains(str)){
+                    duplicates.add(str);
+                }
+            } else {
+                //If the string hasn't been seen yet, add it to the 'seen' set
+                seen.add(str);
+            }
+        }
+
+        Collections.sort(duplicates);
+            
+        return duplicates;
 
     }
 
