@@ -147,6 +147,8 @@ class PriorityQueue<E, P> {
      * @param: P priority   - The priority for the newly added element
      * @return: Node        - Returns an object of type 'Node' representing the 
      *                        newly inserted element
+     * First step is to create a new Node object. This node holds the element, its priority, and its index in the underlying tree structure.
+     * 
      */
 
     public Node add(E e, P priority) {
