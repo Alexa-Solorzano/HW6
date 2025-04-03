@@ -248,8 +248,8 @@ public class ProblemSolutions {
         }
 
         //Sort the final list of pairs
-        Collections.sort(finalizedPair);
+        Collections.sort(newList);
 
-        return finalizedPair;
+        return newList;
     }
 }
