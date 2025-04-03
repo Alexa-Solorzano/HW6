@@ -186,10 +186,21 @@ public class ProblemSolutions {
      */
 
     public static ArrayList<String> pair(int[] input, int k) {
+        HashSet<Integer> seen = new HashSet<>();
+        HashSet<String> foundPairs = new HashSet<>();
+        ArrayList<String> newList = new ArrayList<>();
+        //Iterate over the input list 
+        for(int i = 0; i < input.length; i++){
+            int num = input[i];
+            int complement = k - num; //Find the required pair number
 
-        //
-        //  YOUR CODE GOES HERE
-        //
+            if(seen.contains(complement)){
+                int large = Math.max(num, complement);
+                int small = Math.min(num, complement);
+                String finalizedPair = "(" + small + ", " + large + ")";
+
+                if(
+            
         return new ArrayList<>();  // Make sure returned lists is sorted as indicated above
     }
 }
