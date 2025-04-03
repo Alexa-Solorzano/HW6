@@ -156,9 +156,10 @@ class PriorityQueue<E, P> {
      */
 
     public Node add(E e, P priority) {
-
-        // YOUR CODE GOES HERE
-        return null;
+        Node newNode = new Node(e, priority, tree.size());
+        tree.add(newNode); //Add at the end 
+        pullUp(tree.size() - 1); //Restore heap property
+        return newNode;
     }
 
 
