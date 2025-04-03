@@ -158,6 +158,31 @@ public class ProblemSolutions {
      *  to date, though HashSet. Consider using Java's "Collections.sort()" for final
      *  sort of ArrayList before returning so consistent answer. Utilize Oracle's
      *  Java Framework documentation in its use.
+     *
+     * So not only do the instructions require to find a pair of numbers in the given array that add up to K, they should also be returned in a sorted list of formatted strings. Each pair has to be in ascending order.
+     * Just like the previous method, the logic is very similar. It makes sense to utilize HashSets in this method as well. 
+     * The 'seen' HashSet will help store the numbers we've already encountered. The way this problem diverges from the prev. method is that we need a second HashSet. One that ensures that we don't add duplicate pairs to the final list. We are returning a list of pairs. 
+     * 
+     * Initialize a HashSet to track integers that have already been seen
+     * Initialize a HashSet to track string pairs to ensure there are no duplicates
+     * Initialize a ArrayList to store our final output strings 
+     * 
+     * for(the length of the array)
+     *    initialize variable to represent a number in the array according to the i 
+     *    initialize variable to represent its required pair number that will result in k
+     *    if(the complement already exists in seen, then we have found a valid pair) --> however, we need to take the added step of ensuring the string is formatted correctly. For example, 6,3 will be resorted to 3,6
+     *        initialize int variable that will represent the larger number in the pair     
+     *        initialize int variable that will represent the smaller number in the pair  
+     *        initialize string variable that will represent the correct ordered pair (small first)
+     *
+     *        if(the pair is NOT already added in the HashSet that ensures to avoid duplicates, that means it is a new pair and it should be added to the ArrayList)
+     *            add the pair to the HashSet that holds duplicates so that it cannot be added again to the ArrayList
+     *            add the pair to the ArrayList
+     *         
+     *    add the number in seen so future #'s can check against it
+     * 
+     * After all that, 
+     * sort the list of pairs 
      */
 
     public static ArrayList<String> pair(int[] input, int k) {
