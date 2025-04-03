@@ -178,8 +178,12 @@ class PriorityQueue<E, P> {
      */
 
     public boolean contains(E e) {
-
-        // ADD YOUR CODE HERE
+        for(int i = 0; i < tree.size(); i++){
+            Node node = tree.get(i);
+            if(node.value.equals(e)){
+                return true;
+            }
+        }
         return false;
     }
 
