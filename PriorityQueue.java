@@ -1,7 +1,7 @@
 
 /******************************************************************
  *
- *   YOUR NAME / SECTION NUMBER
+ *   Alexa Solorzano COMP 272
  *
  *   Note, additional comments provided throughout this source code
  *   is for educational purposes
