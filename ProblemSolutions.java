@@ -87,11 +87,27 @@ public class ProblemSolutions {
      */
 
   public static int lastBoulder(int[] boulders) {
+      //Max-heap: PriorityQueue in descending order
+      PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
 
-      //
-      // ADD YOUR CODE HERE - DO NOT FORGET TO ADD YOUR NAME / SECTION # ABOVE
-      //
-      return -1;
+      for(int i = 0; i < boulders.length;i++){
+          pq.add(boulders[i]);
+      }
+
+      while(pq.size() > 1){
+          int largest = pq.poll();
+          int secondLargest = pq.poll();
+
+          if(largest != secondLargest){
+              pq.add(largest - secondLargest);
+          }
+      }
+
+      if(pq.isEmpty()){
+          return 0;
+      } else {
+          return pq.poll();
+      }
   }
 
 
