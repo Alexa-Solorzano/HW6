@@ -148,7 +148,11 @@ class PriorityQueue<E, P> {
      * @return: Node        - Returns an object of type 'Node' representing the 
      *                        newly inserted element
      * First step is to create a new Node object. This node holds the element, its priority, and its index in the underlying tree structure.
-     * 
+     * Now that the node is created, it should be inserted "into min heap as the right most leaf on the lowest level of the tree."
+     * After adding the new node to the end, the heap-order property might be violated.
+     * To ensure the property is not violated, the Private Method pullUp(int) can help. This method is called "when enqueuing an element on the queue. The shape of he min heap is expected to be correct, and this is being called to re-heapify the heap by pulling up the value in the logical tree based on the element value at the location specified by the array index location passed to this method."
+     * The 'int' should be the index of the last added node
+     * Now that the new node is in the correct position, the method can return the type node
      */
 
     public Node add(E e, P priority) {
