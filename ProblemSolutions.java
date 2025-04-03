@@ -199,8 +199,18 @@ public class ProblemSolutions {
                 int small = Math.min(num, complement);
                 String finalizedPair = "(" + small + ", " + large + ")";
 
-                if(
+                if(!foundPairs.contains(finalizedPair)){
+                    foundPairs.add(finalizedPair);
+                    newList.add(finalizedPair);
+                }
+            }
             
-        return new ArrayList<>();  // Make sure returned lists is sorted as indicated above
+            seen.add(num); //Add the current number to the seen set
+        }
+
+        //Sort the final list of pairs
+        Collections.sort(finalizedPair);
+
+        return finalizedPair;
     }
 }
