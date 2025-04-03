@@ -61,6 +61,29 @@ public class ProblemSolutions {
      * max element at the top. Taking top Elements and performing the
      * given operations in the question as long as 2 or more boulders;
      * returning the 0 if queue is empty else return pq.peek().
+     *
+     * Even though most priority queues are implemented as min-heap (where smaller #'s represent higher priorities), for this method, it is better to do it reverse order and organize the PQ as a max-heap (where bigger #'s represent higher priorities)
+     * 
+     * First, 
+     * Initialize a Priority Queue that orders elements from largest to smallest --> by using the Collection class method: 	reverseOrder()
+     * It returns a comparator that imposes the reverse of the natural ordering on a collection of objects that implement the Comparable interface.
+     * This will help turn our min-heap to a max-heap.
+     * Then, 
+     * We loop through each element in the boulders array 
+     * add each element to the priority queue using .add()
+     *
+     * while there are at least two elements in the queue,
+     * //since we are required to choose the heaviest two boulders and smash them together, we have to .poll() the first two elements (aka the 2 largest elements)
+     *    Initialize variable that will hold the largest boulder
+     *    Initialize variable that will hold the SECOND largest boulder
+     *
+     *        If they are not equal, 
+     *            push the difference back into the queue
+     *
+     *    If the PQ is empty,
+     *        return 0;
+     *    Otherwise, 
+     *         return the last remaining element
      */
 
   public static int lastBoulder(int[] boulders) {
