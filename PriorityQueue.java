@@ -171,6 +171,10 @@ class PriorityQueue<E, P> {
      * type 'e' such that o.equals(e).
      *
      * @return: boolean - true if element in queue, else false.
+     * In order to check if the queue contains an element, we should iterate over the entire tree
+     * Have access of the node at index i
+     * Compare using .equals(), and if it is found, return true
+     * Otherwise, return false
      */
 
     public boolean contains(E e) {
